@@ -1,0 +1,79 @@
+<h2 class="text-center mb-4">Enviar Dinero</h2>
+
+<div class="container">
+    <div class="row g-3">
+
+        <div class="col-12 col-lg-4">
+
+            <h5>Agenda de contactos</h5>
+
+            <form>
+
+                <div class="input-group mb-3">
+
+                    <input type="text" class="form-control" placeholder="Buscar contacto">
+
+                    <button class="btn btn-danger" type="">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div id="contactPlaceholder"></div>
+
+            <div id="contactDetailsPlaceholder">
+
+                <div>Nombre: <span></span></div>
+                <div>Banco: <span></span></div>
+                <div>N° Cuenta: <span></span></div>
+                <div>Tipo de cuenta: <span></span></div>
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-lg-6">
+
+            <h5>Transferencia</h5>
+
+            <form>
+
+                <div class="mb-3">
+                    <label class="form-label">Monto</label>
+                    <input type="number" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Descripción</label>
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+
+                <button class="btn btn-danger w-100" type="">
+                    Enviar Dinero
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="col-12 col-lg-2 d-flex justify-content-center align-items-start">
+
+            <button class="btn btn-danger rounded-circle add-contact-button" data-bs-toggle="modal"
+                data-bs-target="#addContactModal">
+
+                <i class="fa-solid fa-plus"></i>
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="addContactModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="modalContent">
+        </div>
+    </div>
+</div>
