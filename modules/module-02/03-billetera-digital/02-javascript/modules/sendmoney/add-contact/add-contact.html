@@ -1,0 +1,58 @@
+<div class="modal-header">
+    <h5 class="modal-title">Agregar Contacto</h5>
+
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+
+<form id="contactForm" autocomplete="off">
+
+    <div class="modal-body">
+
+        <div class="mb-3">
+            <label class="form-label">Nombre y apellido</label>
+            <input type="text" class="form-control" id="contactName">
+            <div id="contactNameError" class="invalid-feedback d-block"></div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Número de CBU</label>
+            <input type="text" class="form-control" id="contactCbu">
+            <div id="contactCbuError" class="invalid-feedback d-block"></div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Alias</label>
+            <input type="text" class="form-control" id="contactAlias">
+            <div id="contactAliasError" class="invalid-feedback d-block"></div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Banco</label>
+
+            <select class="form-select form-select-lg" id="contactBank">
+                <option value="Banco Estado">Banco Estado</option>
+                <option value="Banco de Chile">Banco de Chile</option>
+                <option value="Banco Santander">Banco Santander</option>
+                <option value="Banco BCI">Banco BCI</option>
+            </select>
+
+            <div id="contactBankError" class="invalid-feedback d-block"></div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+
+        <button type="button" class="btn btn-purple" data-bs-dismiss="modal">
+            Cancelar
+        </button>
+
+        <button type="submit" class="btn btn-danger">
+            Guardar
+        </button>
+
+    </div>
+
+</form>
+
+<div id="addContactMessage"></div>

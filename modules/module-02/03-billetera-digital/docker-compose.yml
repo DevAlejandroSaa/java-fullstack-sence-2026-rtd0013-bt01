@@ -7,7 +7,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - "./${WEB_01}:/usr/share/nginx/html"
+      - "./${WEB_02}:/usr/share/nginx/html"
       - "./default.conf:/etc/nginx/conf.d/default.conf"
     networks:
       net_interna:
