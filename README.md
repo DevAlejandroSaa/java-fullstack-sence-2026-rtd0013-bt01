@@ -7,7 +7,3 @@ Repositorio del programa Full Stack Java SENCE 2026 (RTD-25-01-05-0013-1), actua
 ## Estructura del curso
 
 El programa está compuesto por 8 módulos.
-
-## Ramas del modulo 2
-
-- Actividad 01: `feature/web-marvel`
