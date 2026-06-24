@@ -1,0 +1,119 @@
+html,
+body {
+    background-color: #0b0b0b;
+    overflow-x: hidden;
+}
+
+main {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.text-balance {
+    color: #7cfda3;
+}
+
+.text-menu {
+    color: beige;
+}
+
+.btn-menu {
+    color: #ffd500;
+    border-color: #ffd500;
+}
+
+.btn-deposit {
+    color: #ff8a30;
+    border-color: #ff8a30;
+}
+
+.btn-send {
+    color: #40c7fc;
+    border-color: #40c7fc;
+}
+
+.btn-history {
+    color: #a787d4;
+    border-color: #a787d4;
+}
+
+.btn-logout {
+    color: #ff5050;
+    border-color: #ff5050;
+}
+
+.btn-menu:hover {
+    color: #000;
+    background-color: #ffd500;
+    border-color: #ffd500;
+}
+
+.btn-deposit:hover {
+    color: #000;
+    background-color: #ff8a30;
+    border-color: #ff8a30;
+}
+
+.btn-send:hover {
+    color: #000;
+    background-color: #40c7fc;
+    border-color: #40c7fc;
+}
+
+.btn-history:hover {
+    color: #000;
+    background-color: #a787d4;
+    border-color: #a787d4;
+}
+
+.btn-logout:hover {
+    color: #000;
+    background-color: #ff5050;
+    border-color: #ff5050;
+}
+
+.navbar .btn {
+    min-width: 150px;
+}
+
+footer {
+    border-top: 1px solid var(--bs-border-color);
+}
+
+@media (max-width: 991.98px) {
+
+    .navbar .btn {
+        width: 100%;
+        min-width: auto;
+    }
+
+}
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+.loading-overlay .toast {
+    z-index: 2001;
+    min-width: 320px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}

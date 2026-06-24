@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="../../tortuga.png">
+
+    <title>Enviar dinero - Wallet Digital</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/app.css" rel="stylesheet">
+</head>
+
+<body data-bs-theme="dark" class="d-flex flex-column min-vh-100">
+
+    <header>
+
+        <div class="bg-body-tertiary border-bottom py-3">
+            <div class="container text-center">
+                <h1 class="fw-bold mb-0 text-balance">
+                    Saldo: <span id="balanceText"></span> CLP
+                </h1>
+            </div>
+        </div>
+
+        <div class="container py-3 text-center">
+            <h2 class="fw-bold mb-0 text-menu">
+                Enviar dinero
+            </h2>
+        </div>
+
+        <nav class="navbar navbar-expand-lg border-top border-bottom">
+
+            <div class="container">
+
+                <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+
+                    <div class="d-flex flex-column flex-lg-row gap-2 py-3 py-lg-0">
+
+                        <a href="menu.html" id="menuButton" class="btn btn-menu">
+                            <i class="fa-solid fa-house me-1"></i>
+                            Menú
+                        </a>
+
+                        <a href="deposit.html" id="depositButton" class="btn btn-deposit">
+                            <i class="fa-solid fa-money-bill-wave me-1"></i>
+                            Depositar
+                        </a>
+
+                        <a href="#" class="btn btn-send">
+                            <i class="fa-solid fa-paper-plane me-1"></i>
+                            Enviar Dinero
+                        </a>
+
+                        <a href="transactions.html" id="historyButton" class="btn btn-history">
+                            <i class="fa-solid fa-clock-rotate-left me-1"></i>
+                            Últimos movimientos
+                        </a>
+
+                        <a href="login.html" id="logoutButton" class="btn btn-logout">
+                            <i class="fa-solid fa-right-from-bracket me-1"></i>
+                            Cerrar Sesión
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class="container my-4">
+        <div class="row g-3 align-items-start">
+
+            <div class="col-12 col-lg-3 d-none d-lg-block">
+                <form id="searchContactForm">
+                    <label class="form-label">Buscar contacto</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="search" placeholder="Nombre del contacto">
+                        <button class="btn btn-send" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div id="search-message" class="small mt-2 text-center"></div>
+                </form>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex d-lg-none gap-2 mb-3">
+                            <button class="btn btn-send w-50" data-bs-toggle="modal"
+                                data-bs-target="#searchContactModal">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <button class="btn btn-deposit w-50" data-bs-toggle="modal"
+                                data-bs-target="#newContactModal">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </button>
+                        </div>
+
+                        <form id="sendMoneyForm">
+                            <div class="mb-3">
+                                <label class="form-label">Monto a enviar</label>
+                                <input type="number" class="form-control" name="amount" placeholder="Ingrese monto">
+                                <div id="error-amount" class="text-danger small mt-1"></div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-send">
+                                    <i class="fa-solid fa-paper-plane me-1"></i>
+                                    Enviar dinero
+                                </button>
+                            </div>
+                            <div id="success-send" class="text-success small text-center mt-2"></div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 d-none d-lg-block">
+
+                <button class="btn btn-deposit w-100" data-bs-toggle="modal" data-bs-target="#newContactModal">
+                    <i class="fa-solid fa-user-plus me-1"></i>
+                    Agregar contacto
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-dark text-light text-center py-3 mt-auto">
+        <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center">
+
+            <div class="mb-2 mb-lg-0 text-center text-lg-start">
+                <span class="fw-semibold">💳 Wallet Digital</span>
+                <small class="text-secondary d-block">
+                    Gestión de finanzas personales
+                </small>
+            </div>
+
+            <div class="text-center text-lg-end">
+                <small class="text-secondary">
+                    © 2026 Todos los derechos reservados
+                </small>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Modal: Nuevo Contacto -->
+    <div class="modal fade" id="newContactModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form id="newContactForm">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Nuevo contacto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" name="nombre">
+                            <div class="text-danger small mt-1" id="error-nombre"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">CBU</label>
+                            <input type="text" class="form-control" name="cbu">
+                            <div class="text-danger small mt-1" id="error-cbu"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Alias</label>
+                            <input type="text" class="form-control" name="alias">
+                            <div class="text-danger small mt-1" id="error-alias"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <select class="form-select" name="banco">
+                                <option value="">Seleccione banco</option>
+                                <option value="banco_estado">Banco Estado</option>
+                                <option value="santander">Santander</option>
+                                <option value="bci">BCI</option>
+                            </select>
+                            <div class="text-danger small mt-1" id="error-banco"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer flex-column align-items-stretch">
+
+                        <div class="d-flex justify-content-between w-100">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+
+                            <button type="submit" class="btn btn-send">
+                                Guardar contacto
+                            </button>
+                        </div>
+
+                        <div class="text-success small mt-2 text-center" id="success-message"></div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL NUEVO CONTACTO -->
+
+    <!-- Modal: Buscar Contacto -->
+    <div class="modal fade" id="searchContactModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Buscar contacto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <input type="text" class="form-control" placeholder="Nombre o correo">
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-send">Buscar</button>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- FIN MODAL BUSCAR CONTACTO -->
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay d-none">
+
+        <div class="toast show text-bg-success border-0">
+            <div class="toast-body" id="toastMessage"></div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/afc3eba033.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/sendmoney.js" type="module"></script>
+
+</body>
+
+</html>

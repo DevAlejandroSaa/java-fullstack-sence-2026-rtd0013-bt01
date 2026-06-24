@@ -1,0 +1,30 @@
+.card-summary {
+    background: linear-gradient(145deg, #1e1e2f, #161625);
+    border: 1px solid #2c2c3e;
+    color: #fff;
+    border-radius: 14px;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+.card-summary:hover {
+    transform: translateY(-5px);
+    border-color: #ff7a00;
+    box-shadow: 0 10px 25px rgba(255, 122, 0, 0.15);
+}
+
+.card-summary .icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.card-summary h6 {
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.card-summary h3 {
+    font-size: 1.8rem;
+    margin: 0;
+}
